@@ -5,8 +5,6 @@ metodi che non conosciamo nella documentazione) che:
 ● “age” sia un numero. is_int()
 Se tutto è ok, stampare “Accesso riuscito”, altrimenti “Accesso negato” -->
 <?php
-
-
 // var_dump($_GET);
 
 $name = $_GET['name'];
@@ -20,18 +18,19 @@ $checkDotMail = strpos($mail, '.' );
 // var_dump($checkDotMail);
 $checkAtMail = strpos($mail, '@');
 // var_dump($checkAtMail);
-$checkIntegerAge = intval(($age));
+$checkIntegerAge = intval($age);
+$checlIntegerAge2 = ctype_digit($age); // is_numeric();
 // var_dump($checkIntegerAge);
 
 if (!empty($_GET)) {
-    if ($nameLenght > 3 && $checkDotMail !== false && $checkAtMail !== false) {
+    if ($nameLenght > 3 && $checkDotMail !== false && $checkAtMail !== false && is_numeric($age)) {
         echo "Accesso riuscito";
-
     } else {
         echo "Accesso negato!";
     }
 }
 
+//potrei anche andare a creare le condizioni direttamente nelle variabili, di modo da aver la sicurezza nel caso in giorno cambino i termini di validazione del mio form
 
  ?>
 <form method="GET">

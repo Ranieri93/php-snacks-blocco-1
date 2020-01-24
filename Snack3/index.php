@@ -35,9 +35,7 @@ echo "</pre>";
 <?php
 foreach ($posts as $days => $singlePost) {?>
     <h2> <?php echo $days; ?>:</h2>
-
         <ul> <?php
-
             foreach ($singlePost as $value) { ?>
                 <li>
                     <?php echo $value['title']; ?>

@@ -25,23 +25,7 @@ PM in un rettangolo verde. -->
         ]
     ];
 
-    foreach ($db as $key) {
-        echo "<pre>";
-         var_dump($key[0]);
-        echo "</pre>";
-        // foreach ($key as $value) {
-        //     echo "<pre>";
-        //      var_dump($value['name']);
-        //      var_dump($value['lastname']);
-        //     echo "</pre>";
-        // }
-    }
 
-    for ($i=0; $i < count($db); $i++) {
-        echo "<pre>";
-         var_dump($i['teachers']);
-        echo "</pre>";
-    }
 
 ?>
 
@@ -53,6 +37,22 @@ PM in un rettangolo verde. -->
         <title>snack6</title>
     </head>
     <body>
+        <?php foreach ($db as $ruolo => $persone) {
+            if ($ruolo == 'teachers') { ?>
+                <div class="grey">
+        <?php    } else {  ?>
+            <div class="green">
+                <?php
+            }
+             echo $ruolo . '<br>'
+            foreach ($persone as $persona) {
+                echo "<pre>";
+                 var_dump($persona['name'] . ' ');
+                 var_dump($persona['lastname'] . '<br>');
+                echo "</pre>";
+            } ?>
 
+        </div>
+        <?php }   ?>
     </body>
 </html>
